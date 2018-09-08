@@ -5,17 +5,20 @@ try
     set rtp+=~/.vim/bundle/Vundle.vim
     call vundle#begin()
     Plugin 'VundleVim/Vundle.vim'
-    Plugin 'joshdick/onedark.vim'
-    Plugin 'itchyny/lightline.vim'
-    Plugin 'w0rp/ale'
     Plugin 'ajh17/vimcompletesme'
+    Plugin 'w0rp/ale'
+    Plugin 'joshdick/onedark.vim'
+    Plugin 'vim-airline/vim-airline'
     call vundle#end()
 
-    let g:lightline = {
-                \ 'colorscheme': 'onedark',
-                \ }
+    let g:airline#extensions#tabline#enabled = 1
 
+    let g:ale_linters = {
+    \   'python': ['pycodestyle'],
+    \}
     let g:ale_lint_on_text_changed='never'
+    " only run linters named in ale_linters settings.
+    let g:ale_linters_explicit = 1
 catch
 endtry
 
@@ -106,6 +109,11 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" apply vim patch to make comment-aware line joins
+if v:version > 703 || v:version == 703 && has('patch541')
+  set formatoptions+=j
+endif
+
 " syntax highlighting, background, colorscheme
 syntax enable
 set background=dark
@@ -124,3 +132,7 @@ set complete=.,b,u,]
 set wildmenu
 set wildmode=longest,list:longest
 set completeopt=menu,menuone,preview,noinsert
+
+" keep text selected while indenting
+vnoremap < <gv
+vnoremap > >gv
