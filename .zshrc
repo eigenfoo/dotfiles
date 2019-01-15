@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH="$HOME/bin:/Users/george/anaconda/bin:$HOME/scala-2.12.4/bin:$PATH"
+export PATH="$HOME/bin:$HOME/miniconda3/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/george/.oh-my-zsh
@@ -101,6 +101,10 @@ alias du='du -ch'
 
 alias dtop='cd ~/Desktop'
 alias cellar='cd /usr/local/Cellar'
-alias cofphe='ssh george@espresso.physics.cooper.edu -p 8198'
-alias kahan='ssh ho@kahan.ee.cooper.edu -p 31415'
-alias spcup='ssh spcup@199.98.27.237 -p 31415'
+alias cofphe='ssh -p 8198 george@espresso.physics.cooper.edu'
+alias kahan='ssh -p 31415 ho@kahan.ee.cooper.edu'
+alias fontbakers='ssh -p 31415 fontbakers@kahan.ee.cooper.edu'
+alias spcup='ssh -p 31415 spcup@199.98.27.237'
+
+export TERM=xterm-color
+export VIRTUAL_ENV_DISABLE_PROMPT=
