@@ -1,3 +1,4 @@
+rm .bash_logout .bash_profile .bashrc .gitconfig .hushlogin .profile .vimrc .zshrc
 wget https://raw.githubusercontent.com/eigenfoo/dotfiles/master/.bash_logout
 wget https://raw.githubusercontent.com/eigenfoo/dotfiles/master/.bash_profile
 wget https://raw.githubusercontent.com/eigenfoo/dotfiles/master/.bashrc
