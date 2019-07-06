@@ -103,7 +103,7 @@ alias dtop='cd ~/Desktop'
 alias cellar='cd /usr/local/Cellar'
 alias cofphe='ssh -p 8198 george@espresso.physics.cooper.edu'
 alias kahan='ssh -p 31415 ho@kahan.ee.cooper.edu'
-alias fontbakers='ssh -p 31415 fontbakers@kahan.ee.cooper.edu'
+alias fontbakers='ssh -p 31415 -X fontbakers@kahan.ee.cooper.edu'
 alias spcup='ssh -p 31415 spcup@199.98.27.237'
 
 export TERM=xterm-color
