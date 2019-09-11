@@ -87,21 +87,6 @@ fi
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# aliases
-alias ls='ls -GF'
-alias la='ls -AGF'
-alias ll='ls -lGF'
-alias l='ls -laghFG'
-alias q='exit'
-alias c='clear'
-alias du='du -ch'
-
-alias dtop='cd ~/Desktop'
-alias cofphe='ssh george@espresso.physics.cooper.edu -p 8198'
-alias kahan='ssh ho@kahan.ee.cooper.edu -p 31415'
-alias fontbakers='ssh -p 31415 -X fontbakers@kahan.ee.cooper.edu'
-alias spcup='ssh spcup@199.98.27.237 -p 31415'
-
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
