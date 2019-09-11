@@ -10,10 +10,10 @@ alias ....='cd ../../../'
 alias .....='cd ../../../../'
 
 # ls
-alias ls='ls -GF'
-alias la='ls -AGF'
-alias ll='ls -lGF'
-alias l='ls -laghFG'
+alias ls='ls -GF --color=auto'
+alias la='ls -AGF --color=auto'
+alias ll='ls -lGF --color=auto'
+alias l='ls -laghFG --color=auto'
 
 # rm
 alias rm='rm -I'
@@ -35,17 +35,17 @@ function current_branch() {
 
 alias ga='git add'
 alias ga.='git add .'
-alias gb="git branch"
-alias gba="git branch -a"
-alias gbd="git branch -d"
-alias gco="git checkout"
-alias gcob="git checkout -b"
-alias gc="git commit -v"  # Overrides... something
+alias gb='git branch'
+alias gba='git branch -a'
+alias gbd='git branch -d'
+alias gco='git checkout'
+alias gcob='git checkout -b'
+alias gc='git commit -v'  # Overrides... something
 alias gca='git commit -va'
 alias gcam='git commit -vam'
 alias gc!='git commit -v --amend'
-alias gd="git diff"
-alias gdc="git diff --cached"
+alias gd='git diff'
+alias gdc='git diff --cached'
 alias gf='git fetch'
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --stat"  # glog -p to see diff!
 alias gpull='git pull origin $(current_branch)'
@@ -57,7 +57,7 @@ alias gsts='git stash show --text'
 alias gsta='git stash apply'
 alias gstp='git stash pop'
 alias gstd='git stash drop'
-alias gs="git status"  # Overrides Ghostscript, but you can still type `ghostscript` for that
+alias gs='git status'  # Overrides Ghostscript, but you can still type `ghostscript` for that
 
 # ssh
 alias dtop='cd ~/Desktop'
