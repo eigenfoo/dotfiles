@@ -58,3 +58,10 @@ alias gsta='git stash apply'
 alias gstp='git stash pop'
 alias gstd='git stash drop'
 alias gs="git status"  # Overrides Ghostscript, but you can still type `ghostscript` for that
+
+# ssh
+alias dtop='cd ~/Desktop'
+alias cofphe='ssh george@espresso.physics.cooper.edu -p 8198'
+alias kahan='ssh ho@kahan.ee.cooper.edu -p 31415'
+alias fontbakers='ssh -p 31415 -X fontbakers@kahan.ee.cooper.edu'
+alias spcup='ssh spcup@199.98.27.237 -p 31415'
