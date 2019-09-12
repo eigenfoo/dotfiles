@@ -114,9 +114,6 @@ alias la='ls -AGF'
 alias ll='ls -lGF'
 alias l='ls -laghFG'
 
-# rm
-alias rm='rm -I'
-
 # disk
 alias df='df -H'
 alias du='du -ch'
