@@ -1,6 +1,6 @@
 #!/bin/sh
 cd ~
-rm .bash_logout .bash_profile .bashrc .bash_aliases .gitconfig .hushlogin .profile .vimrc .zshrc
+rm -f .bash_logout .bash_profile .bashrc .bash_aliases .gitconfig .hushlogin .profile .vimrc .zshrc
 wget https://raw.githubusercontent.com/eigenfoo/dotfiles/master/bash/.bash_logout
 wget https://raw.githubusercontent.com/eigenfoo/dotfiles/master/bash/.bash_profile
 wget https://raw.githubusercontent.com/eigenfoo/dotfiles/master/bash/.bashrc
