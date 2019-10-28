@@ -43,6 +43,7 @@ alias gcob='git checkout -b'
 alias gc='git commit -v'  # Overrides... something
 alias gca='git commit -va'
 alias gcam='git commit -vam'
+alias gcm='git commit -vm'
 alias gc!='git commit -v --amend'
 alias gd='git diff'
 alias gdc='git diff --cached'
