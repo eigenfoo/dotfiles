@@ -38,6 +38,7 @@ alias ga.='git add .'
 alias gb='git branch'
 alias gba='git branch -a'
 alias gbd='git branch -d'
+alias gbD='git branch -D'
 alias gco='git checkout'
 alias gcob='git checkout -b'
 alias gc='git commit -v'  # Overrides... something
