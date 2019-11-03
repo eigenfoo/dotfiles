@@ -10,10 +10,10 @@ alias ....='cd ../../../'
 alias .....='cd ../../../../'
 
 # ls
-alias ls='ls -GF --color=auto'
-alias la='ls -AGF --color=auto'
-alias ll='ls -lGF --color=auto'
-alias l='ls -laghFG --color=auto'
+alias ls='ls -GF'
+alias la='ls -AGF'
+alias ll='ls -lGF'
+alias l='ls -laghFG'
 
 # rm
 alias rm='rm -I'
