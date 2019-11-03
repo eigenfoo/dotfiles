@@ -1,6 +1,6 @@
 # George's Dotfiles
 
-My dotfiles for bash, git, vim and zsh.
+My dotfiles for bash, git, tmux, vim and zsh.
 
 ## Installation
 
