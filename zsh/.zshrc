@@ -142,7 +142,7 @@ alias gca='git commit -va'
 alias gcam='git commit -vam'
 alias gcm='git commit -vm'
 alias gc!='git commit -v --amend'
-alias gd='git diff'
+alias gd='git diff --color-words=. --ignore-all-space'
 alias gdc='git diff --cached'
 alias gf='git fetch'
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --stat"  # glog -p to see diff!
