@@ -12,4 +12,6 @@ wget https://raw.githubusercontent.com/eigenfoo/dotfiles/master/zsh/.zshrc
 wget https://raw.githubusercontent.com/eigenfoo/dotfiles/master/tmux/.tmux.conf
 wget https://raw.githubusercontent.com/eigenfoo/dotfiles/master/git/.gitconfig
 source .bash_logout .bash_profile .bashrc .bash_aliases .profile .hushlogin .vimrc .zshrc .tmux.conf .gitconfig
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall
 exit 0
