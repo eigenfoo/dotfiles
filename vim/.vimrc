@@ -9,7 +9,7 @@ try
     Plugin 'w0rp/ale'
     Plugin 'joshdick/onedark.vim'
     Plugin 'vim-airline/vim-airline'
-    Plugin 'maverickg/stan.vim'
+    Plugin 'eigenfoo/stan-vim'
     call vundle#end()
 
     let g:airline#extensions#tabline#enabled = 1
