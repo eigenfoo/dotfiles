@@ -133,6 +133,7 @@ alias ga='git add'
 alias ga.='git add .'
 alias gb='git branch'
 alias gba='git branch -a'
+alias gbc='git branch --merged | grep -vE "(^\*|master|develop)" | xargs -r git branch -d'  # Deletes merged branches
 alias gbd='git branch -d'
 alias gbD='git branch -D'
 alias gco='git checkout'
@@ -145,7 +146,8 @@ alias gc!='git commit -v --amend'
 alias gd='git diff --color-words=. --ignore-all-space'
 alias gdc='git diff --cached'
 alias gf='git fetch'
-alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --stat"  # glog -p to see diff!
+alias gl="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias gll="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --stat"
 alias gpull='git pull origin $(current_branch)'
 alias gpush='git push origin $(current_branch)'
 alias grh='git reset HEAD'
