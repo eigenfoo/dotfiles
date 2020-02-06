@@ -56,7 +56,7 @@ set smarttab
 set tabstop=4 
 set softtabstop=4
 set shiftwidth=4
-set textwidth=80
+set textwidth=88
 
 " indentation
 set autoindent
@@ -66,7 +66,7 @@ set smartindent
 " also, shorten timeout length
 inoremap jk <Esc>
 inoremap kj <Esc>
-set timeoutlen=80 
+set timeoutlen=80
 set ttimeoutlen=10
 
 " move vertically by visual line
@@ -137,3 +137,11 @@ set completeopt=menu,menuone,preview,noinsert
 " keep text selected while indenting
 vnoremap < <gv
 vnoremap > >gv
+
+" netrw
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 20
+let g:netrw_list_hide= '.*\.swp$'
