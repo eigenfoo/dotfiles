@@ -160,6 +160,12 @@ alias gstd='git stash drop'
 alias gs='git status'  # Overrides Ghostscript, but you can still type `ghostscript` for that
 
 # ssh
+machine="$(uname -s)"
+case "${machine}" in
+    Linux*)  NOTES_DIRECTORY=/keybase/private/eigenfoo;;
+    Darwin*) NOTES_DIRECTORY=/Volumes/Keybase/private/eigenfoo;;
+esac
+alias mnd="cd $NOTES_DIRECTORY"
 alias dtop='cd ~/Desktop'
 alias cofphe='ssh george@espresso.physics.cooper.edu -p 8198'
 alias kahan='ssh ho@kahan.ee.cooper.edu -p 31415'
