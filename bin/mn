@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Modified from https://github.com/pimterry/notes/blob/master/notes
 
 # Configuration
 QUICKNOTE_FORMAT="logs/%Y-%m-W%V"
