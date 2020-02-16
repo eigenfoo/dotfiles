@@ -165,7 +165,8 @@ case "${machine}" in
     Linux*)  NOTES_DIRECTORY=/keybase/private/eigenfoo;;
     Darwin*) NOTES_DIRECTORY=/Volumes/Keybase/private/eigenfoo;;
 esac
-alias mnd="cd $NOTES_DIRECTORY"
+alias ww="vim -c VimwikiIndex"
+alias wwd="cd $NOTES_DIRECTORY"
 alias dtop='cd ~/Desktop'
 alias cofphe='ssh george@espresso.physics.cooper.edu -p 8198'
 alias kahan='ssh ho@kahan.ee.cooper.edu -p 31415'
