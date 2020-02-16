@@ -5,12 +5,41 @@ try
     set rtp+=~/.vim/bundle/Vundle.vim
     call vundle#begin()
     Plugin 'VundleVim/Vundle.vim'
+    Plugin 'vimwiki/vimwiki'
     Plugin 'ajh17/vimcompletesme'
     Plugin 'w0rp/ale'
     Plugin 'joshdick/onedark.vim'
     Plugin 'vim-airline/vim-airline'
     Plugin 'eigenfoo/stan-vim'
     call vundle#end()
+
+    if !exists("g:os")
+        if has("win64") || has("win32") || has("win16")
+            let g:os = "Windows"
+        else
+            let g:os = substitute(system('uname'), '\n', '', '')
+        endif
+    endif
+
+    if g:os == "Darwin"
+        let g:vimwiki_list = [{
+        \   'path': '/Volumes/keybase/private/eigenfoo/',
+        \   'syntax': 'markdown',
+        \   'ext': '.md'
+        \}]
+    elseif g:os == "Linux"
+        let g:vimwiki_list = [{
+        \   'path': '/keybase/private/eigenfoo/',
+        \   'syntax': 'markdown',
+        \   'ext': '.md'
+        \}]
+    elseif g:os == "Windows"
+        let g:vimwiki_list = [{
+        \   'path': '/keybase/private/eigenfoo/',
+        \   'syntax': 'markdown',
+        \   'ext': '.md'
+        \}]
+    endif
 
     let g:airline#extensions#tabline#enabled = 1
 
@@ -66,7 +95,8 @@ set smartindent
 " also, shorten timeout length
 inoremap jk <Esc>
 inoremap kj <Esc>
-set timeoutlen=80
+set notimeout
+set ttimeout
 set ttimeoutlen=10
 
 " move vertically by visual line
