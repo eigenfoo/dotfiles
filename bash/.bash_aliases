@@ -71,6 +71,7 @@ case "${machine}" in
 esac
 alias ww="vim -c VimwikiIndex"
 alias wwd="cd $NOTES_DIRECTORY"
+alias wwr='vim $(find $NOTES_DIRECTORY -name "*.md" -not -path "*/diary/*" | sort -R | head -n 1)'
 alias dtop='cd ~/Desktop'
 alias cofphe='ssh george@espresso.physics.cooper.edu -p 8198'
 alias kahan='ssh ho@kahan.ee.cooper.edu -p 31415'
