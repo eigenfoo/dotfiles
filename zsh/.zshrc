@@ -162,8 +162,8 @@ alias gs='git status'  # Overrides Ghostscript, but you can still type `ghostscr
 # ssh
 machine="$(uname -s)"
 case "${machine}" in
-    Linux*)  NOTES_DIRECTORY=/keybase/private/eigenfoo;;
-    Darwin*) NOTES_DIRECTORY=/Volumes/Keybase/private/eigenfoo;;
+    Linux*)  NOTES_DIRECTORY=/mnt/alexandria/;;
+    Darwin*) NOTES_DIRECTORY=/Volumes/alexandria/;;
 esac
 alias ww="vim -c VimwikiIndex"
 alias wwd="cd $NOTES_DIRECTORY"
