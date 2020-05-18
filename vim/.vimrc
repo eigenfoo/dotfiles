@@ -23,19 +23,13 @@ try
 
     if g:os == "Darwin"
         let g:vimwiki_list = [{
-        \   'path': '/Volumes/keybase/private/eigenfoo/',
+        \   'path': '/Volumes/alexandria/',
         \   'syntax': 'markdown',
         \   'ext': '.md'
         \}]
     elseif g:os == "Linux"
         let g:vimwiki_list = [{
-        \   'path': '/keybase/private/eigenfoo/',
-        \   'syntax': 'markdown',
-        \   'ext': '.md'
-        \}]
-    elseif g:os == "Windows"
-        let g:vimwiki_list = [{
-        \   'path': '/keybase/private/eigenfoo/',
+        \   'path': '/mnt/alexandria/',
         \   'syntax': 'markdown',
         \   'ext': '.md'
         \}]
