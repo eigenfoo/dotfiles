@@ -5,12 +5,14 @@ try
     set rtp+=~/.vim/bundle/Vundle.vim
     call vundle#begin()
     Plugin 'VundleVim/Vundle.vim'
-    Plugin 'vimwiki/vimwiki'
     Plugin 'ajh17/vimcompletesme'
-    Plugin 'w0rp/ale'
+    " No need for Stan support these days...
+    " Plugin 'eigenfoo/stan-vim'
     Plugin 'joshdick/onedark.vim'
+    Plugin 'JuliaEditorSupport/julia-vim'
     Plugin 'vim-airline/vim-airline'
-    Plugin 'eigenfoo/stan-vim'
+    Plugin 'vimwiki/vimwiki'
+    Plugin 'w0rp/ale'
     call vundle#end()
 
     if !exists("g:os")
@@ -39,6 +41,7 @@ try
 
     let g:ale_linters = {
     \   'python': ['pycodestyle'],
+    \   'julia': ['languageserver'],
     \}
     let g:ale_lint_on_text_changed='never'
     " only run linters named in ale_linters settings.
