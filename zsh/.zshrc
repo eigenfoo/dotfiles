@@ -118,10 +118,6 @@ alias l='ls -laghFG'
 alias df='df -H'
 alias du='du -ch'
 
-# find
-alias fd='find . -type d -name'
-alias ff='find . -type f -name'
-
 # For git aliases below
 function current_branch() {
   ref=$(git symbolic-ref HEAD 2> /dev/null) || \

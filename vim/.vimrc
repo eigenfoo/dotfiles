@@ -10,6 +10,7 @@ try
     " Plugin 'eigenfoo/stan-vim'
     Plugin 'joshdick/onedark.vim'
     Plugin 'JuliaEditorSupport/julia-vim'
+    Plugin 'mattn/calendar-vim'
     Plugin 'vim-airline/vim-airline'
     Plugin 'vimwiki/vimwiki'
     Plugin 'w0rp/ale'
@@ -44,8 +45,7 @@ try
     \   'julia': ['languageserver'],
     \}
     let g:ale_lint_on_text_changed='never'
-    " only run linters named in ale_linters settings.
-    let g:ale_linters_explicit = 1
+    let g:ale_linters_explicit = 1  " only run ale_linters
 catch
 endtry
 
