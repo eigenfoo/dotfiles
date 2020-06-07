@@ -19,9 +19,10 @@ source .bash_logout .bash_profile .bashrc .bash_aliases .profile .hushlogin .vim
 # Install bash scripts. Assumes that ~/bin/ is on the $PATH.
 mkdir -p ~/bin/
 cd ~/bin/
-rm -f extract
+rm -f extract ff
 wget https://raw.githubusercontent.com/eigenfoo/dotfiles/master/bin/extract
-chmod +x extract
+wget https://raw.githubusercontent.com/eigenfoo/dotfiles/master/bin/ff
+chmod +x extract ff
 
 # Install Vim plugins.
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
