@@ -105,7 +105,7 @@ set ignorecase
 set smartcase
 set hlsearch
 set incsearch
-nnoremap <space> :noh<CR>
+nnoremap m :noh<CR>
 
 " relative line numbering
 set number
@@ -120,6 +120,14 @@ nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
 nnoremap <right> <nop>
+
+" code folding
+set foldmethod=indent  " fold code using indents: this works well for Python
+set nofoldenable
+set foldlevel=2
+nnoremap <Space> za
+" visually select some lines, then space to fold. only works with foldmethod=manual 
+" vnoremap <Space> zf
 
 " scrolling offset, mouse scrolling
 set scrolloff=2
@@ -172,3 +180,6 @@ let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_winsize = 20
 let g:netrw_list_hide= '.*\.swp$'
+nnoremap <Leader>e :Vexplore<Enter>
+nnoremap <Leader>se :Sexplore<Enter>
+nnoremap <Leader>ve :Vexplore<Enter>
