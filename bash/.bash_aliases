@@ -22,6 +22,9 @@ alias rm='rm -I'
 alias df='df -H'
 alias du='du -ch'
 
+# activate venvs
+alias svba='source venv/bin/activate'
+
 # For git aliases below
 function current_branch() {
   ref=$(git symbolic-ref HEAD 2> /dev/null) || \
