@@ -105,7 +105,7 @@ set ignorecase
 set smartcase
 set hlsearch
 set incsearch
-nnoremap m :noh<CR>
+nnoremap <Space> :noh<CR>
 
 " relative line numbering
 set number
@@ -125,7 +125,7 @@ nnoremap <right> <nop>
 set foldmethod=indent  " fold code using indents: this works well for Python
 set nofoldenable
 set foldlevel=2
-nnoremap <Space> za
+nnoremap <Space><Space> za
 " visually select some lines, then space to fold. only works with foldmethod=manual 
 " vnoremap <Space> zf
 
