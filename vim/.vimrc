@@ -7,12 +7,12 @@ try
     Plugin 'VundleVim/Vundle.vim'
     Plugin 'JuliaEditorSupport/julia-vim'
     Plugin 'davidhalter/jedi-vim'
-    " Plugin 'eigenfoo/stan-vim'  No need for Stan support these days...
+    Plugin 'dense-analysis/ale'
+    " Plugin 'eigenfoo/stan-vim'  No need for Stan support these days
     Plugin 'joshdick/onedark.vim'
-    Plugin 'mattn/calendar-vim'
+    " Plugin 'mattn/calendar-vim'  Not much need for a calendar
     Plugin 'vim-airline/vim-airline'
     Plugin 'vimwiki/vimwiki'
-    Plugin 'w0rp/ale'
     call vundle#end()
 
     if !exists("g:os")
