@@ -5,11 +5,10 @@ try
     set rtp+=~/.vim/bundle/Vundle.vim
     call vundle#begin()
     Plugin 'VundleVim/Vundle.vim'
-    Plugin 'ajh17/vimcompletesme'
-    " No need for Stan support these days...
-    " Plugin 'eigenfoo/stan-vim'
-    Plugin 'joshdick/onedark.vim'
     Plugin 'JuliaEditorSupport/julia-vim'
+    Plugin 'davidhalter/jedi-vim'
+    " Plugin 'eigenfoo/stan-vim'  No need for Stan support these days...
+    Plugin 'joshdick/onedark.vim'
     Plugin 'mattn/calendar-vim'
     Plugin 'vim-airline/vim-airline'
     Plugin 'vimwiki/vimwiki'
@@ -41,8 +40,11 @@ try
     let g:airline#extensions#tabline#enabled = 1
 
     let g:ale_linters = {
-    \   'python': ['pycodestyle'],
+    \   'python': ['flake8', 'pylint'],
     \   'julia': ['languageserver'],
+    \}
+    let g:ale_fixers = {
+    \   'python': ['black'],
     \}
     let g:ale_lint_on_text_changed='never'
     let g:ale_linters_explicit = 1  " only run ale_linters
