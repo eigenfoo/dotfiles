@@ -48,6 +48,8 @@ try
     \}
     let g:ale_lint_on_text_changed='never'
     let g:ale_linters_explicit = 1  " only run ale_linters
+    
+    let g:jedi#popup_on_dot = 0
 catch
 endtry
 
