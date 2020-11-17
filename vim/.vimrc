@@ -8,11 +8,13 @@ try
     Plugin 'JuliaEditorSupport/julia-vim'
     Plugin 'davidhalter/jedi-vim'
     Plugin 'dense-analysis/ale'
-    " Plugin 'eigenfoo/stan-vim'  No need for Stan support these days
+    " Plugin 'eigenfoo/stan-vim'  No need for Stan support these days...
     Plugin 'joshdick/onedark.vim'
-    " Plugin 'mattn/calendar-vim'  Not much need for a calendar
+    " Plugin 'otherjoel/vim-pollen'
+    Plugin 'tpope/vim-fugitive'
     Plugin 'vim-airline/vim-airline'
     Plugin 'vimwiki/vimwiki'
+    " Plugin 'wlangstroth/vim-racket'
     call vundle#end()
 
     if !exists("g:os")
@@ -48,7 +50,7 @@ try
     \}
     let g:ale_lint_on_text_changed='never'
     let g:ale_linters_explicit = 1  " only run ale_linters
-    
+
     let g:jedi#popup_on_dot = 0
 catch
 endtry
@@ -86,7 +88,7 @@ set smarttab
 set tabstop=4 
 set softtabstop=4
 set shiftwidth=4
-set textwidth=88
+set textwidth=100
 
 " indentation
 set autoindent
@@ -187,3 +189,7 @@ let g:netrw_list_hide= '.*\.swp$'
 nnoremap <Leader>e :Vexplore<Enter>
 nnoremap <Leader>se :Sexplore<Enter>
 nnoremap <Leader>ve :Vexplore<Enter>
+
+" Easy insertion of special chars
+imap <C-L> λ
+imap <C-E> ◊
