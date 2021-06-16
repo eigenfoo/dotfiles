@@ -10,13 +10,21 @@ alias ....='cd ../../../'
 alias .....='cd ../../../../'
 
 # ls
-alias ls='ls -GF'
-alias la='ls -AGF'
-alias ll='ls -lGF'
-alias l='ls -laghFG'
+if command -v exa &> /dev/null
+then
+    alias ls='exa -GF'
+    alias la='exa -aGF'
+    alias ll='exa -lGF'
+    alias l='exa -laghFG'
+else
+    alias ls='ls -GF'
+    alias la='ls -aGF'
+    alias ll='ls -lGF'
+    alias l='ls -laghFG'
+fi
 
 # rm
-alias rm='rm -I'
+alias rm='rm -i'
 
 # disk
 alias df='df -H'
@@ -71,7 +79,6 @@ esac
 alias ww="vim -c VimwikiIndex"
 alias wwd="cd $NOTES_DIRECTORY"
 alias wwr='vim $(find $NOTES_DIRECTORY -name "*.md" -not -path "*/diary/*" | sort -R | head -n 1)'
-alias dtop='cd ~/Desktop'
 alias cofphe='ssh george@espresso.physics.cooper.edu -p 8198'
 alias kahan='ssh ho@kahan.ee.cooper.edu -p 31415'
 alias fontbakers='ssh -p 31415 -X fontbakers@kahan.ee.cooper.edu'
