@@ -57,9 +57,16 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\n\$ '
+    BLUE='\e[1;34m'
+    CYAN='\e[1;36m'
+    GREEN='\e[1;32m'
+    MAGENTA='\e[1;35m'
+    NO_COLOR='\e[0m'  # No color
+    RED='\e[1;31m'
+    YELLOW='\e[1;33m'
+    PS1="${debian_chroot:+($debian_chroot)}[$CYAN\!$NO_COLOR][$MAGENTA\t$NO_COLOR] $BLUE\u$NO_COLOR@$GREEN\H$NO_COLOR:$YELLOW\w$NO_COLOR\n# "
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    PS1='${debian_chroot:+($debian_chroot)}[\!][\t] \u@\H:\w\n# '
 fi
 unset color_prompt force_color_prompt
 
