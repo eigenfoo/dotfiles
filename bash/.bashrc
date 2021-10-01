@@ -64,7 +64,7 @@ if [ "$color_prompt" = yes ]; then
     NO_COLOR='\e[0m'  # No color
     RED='\e[1;31m'
     YELLOW='\e[1;33m'
-    PS1="${debian_chroot:+($debian_chroot)}[$CYAN\!$NO_COLOR][$MAGENTA\t$NO_COLOR] $BLUE\u$NO_COLOR@$GREEN\H$NO_COLOR:$YELLOW\w$NO_COLOR\n# "
+    PS1="${debian_chroot:+($debian_chroot)}$BLUE\u$NO_COLOR@$GREEN\H$NO_COLOR:$YELLOW\w$NO_COLOR\n# "
 else
     PS1='${debian_chroot:+($debian_chroot)}[\!][\t] \u@\H:\w\n# '
 fi
