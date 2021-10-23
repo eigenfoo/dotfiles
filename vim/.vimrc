@@ -112,6 +112,9 @@ set hlsearch
 set incsearch
 nnoremap <Space> :noh<CR>
 
+" double space reruns previous shell command
+nnoremap <Space><Space> :!!<CR>
+
 " relative line numbering
 set number
 set relativenumber
@@ -130,7 +133,6 @@ nnoremap <right> <nop>
 set foldmethod=indent  " fold code using indents: this works well for Python
 set nofoldenable
 set foldlevel=2
-nnoremap <Space><Space> za
 " visually select some lines, then space to fold. only works with foldmethod=manual 
 " vnoremap <Space> zf
 
