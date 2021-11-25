@@ -70,15 +70,18 @@ alias gstp='git stash pop'
 alias gstd='git stash drop'
 alias gs='git status'  # Overrides Ghostscript, but you can still type `ghostscript` for that
 
+# macvim
+if command -v mvim &> /dev/null
+then
+    alias vim='mvim -v'
+fi
+
 # ssh
 machine="$(uname -s)"
 case "${machine}" in
     Linux*)  NOTES_DIRECTORY=/mnt/alexandria/;;
     Darwin*) NOTES_DIRECTORY=/Volumes/alexandria/;;
 esac
-alias ww="vim -c VimwikiIndex"
-alias wwd="cd $NOTES_DIRECTORY"
-alias wwr='vim $(find $NOTES_DIRECTORY -name "*.md" -not -path "*/diary/*" | sort -R | head -n 1)'
 alias cofphe='ssh george@espresso.physics.cooper.edu -p 8198'
 alias kahan='ssh ho@kahan.ee.cooper.edu -p 31415'
 alias fontbakers='ssh -p 31415 -X fontbakers@kahan.ee.cooper.edu'
