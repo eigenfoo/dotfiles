@@ -5,17 +5,14 @@ try
     set rtp+=~/.vim/bundle/Vundle.vim
     call vundle#begin()
     Plugin 'VundleVim/Vundle.vim'
-    Plugin 'JuliaEditorSupport/julia-vim'
+    Plugin 'christoomey/vim-tmux-navigator'
     Plugin 'davidhalter/jedi-vim'
     Plugin 'dense-analysis/ale'
-    " Plugin 'eigenfoo/stan-vim'  No need for Stan support these days...
     Plugin 'joshdick/onedark.vim'
-    Plugin 'mattn/calendar-vim'
-    " Plugin 'otherjoel/vim-pollen'
-    Plugin 'tpope/vim-fugitive'
+    Plugin 'junegunn/fzf'
+    Plugin 'junegunn/fzf.vim'
+    Plugin 'preservim/vimux'
     Plugin 'vim-airline/vim-airline'
-    Plugin 'vimwiki/vimwiki'
-    " Plugin 'wlangstroth/vim-racket'
     call vundle#end()
 
     if !exists("g:os")
@@ -133,8 +130,12 @@ set hlsearch
 set incsearch
 nnoremap <Space> :noh<CR>
 
+" run a shell command
 " double space reruns previous shell command
-nnoremap <Space><Space> :!!<CR>
+map <Leader>vp :VimuxPromptCommand<CR>
+map <Leader>vl :VimuxRunLastCommand<CR>
+map <Space><Space> :VimuxRunLastCommand<CR>
+map <eader>vi :VimuxInspectRunner<CR>
 
 " relative line numbering
 set number
