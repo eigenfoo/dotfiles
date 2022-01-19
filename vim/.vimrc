@@ -8,6 +8,7 @@ try
     Plugin 'christoomey/vim-tmux-navigator'
     Plugin 'davidhalter/jedi-vim'
     Plugin 'dense-analysis/ale'
+    Plugin 'jiangmiao/auto-pairs'
     Plugin 'joshdick/onedark.vim'
     Plugin 'junegunn/fzf'
     Plugin 'junegunn/fzf.vim'
