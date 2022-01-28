@@ -64,20 +64,11 @@ if [ "$color_prompt" = yes ]; then
     NO_COLOR='\e[0m'  # No color
     RED='\e[1;31m'
     YELLOW='\e[1;33m'
-    PS1="${debian_chroot:+($debian_chroot)}$BLUE\u$NO_COLOR@$GREEN\h$NO_COLOR:$YELLOW\w$NO_COLOR\n# "
+    PS1="${debian_chroot:+($debian_chroot)}$YELLOW[\w]$NO_COLOR\n# "
 else
-    PS1='${debian_chroot:+($debian_chroot)}[\!][\t] \u@\h:\w\n# '
+    PS1='${debian_chroot:+($debian_chroot)}[\w]\n# '
 fi
 unset color_prompt force_color_prompt
-
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
