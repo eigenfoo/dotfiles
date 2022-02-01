@@ -12,7 +12,7 @@ try
     Plugin 'joshdick/onedark.vim'
     Plugin 'junegunn/fzf'
     Plugin 'junegunn/fzf.vim'
-    Plugin 'preservim/vimux'
+    Plugin 'tpope/vim-unimpaired'
     Plugin 'vim-airline/vim-airline'
     call vundle#end()
 
@@ -24,19 +24,10 @@ try
         endif
     endif
 
-    if g:os == "Darwin"
-        let g:vimwiki_list = [{
-        \   'path': '/Volumes/alexandria/',
-        \   'syntax': 'markdown',
-        \   'ext': '.md'
-        \}]
-    elseif g:os == "Linux"
-        let g:vimwiki_list = [{
-        \   'path': '/mnt/alexandria/',
-        \   'syntax': 'markdown',
-        \   'ext': '.md'
-        \}]
-    endif
+	if executable('rg')
+		set grepprg=rg\ --vimgrep
+		set grepformat=%f:%l:%c:%m
+	endif
 
     let g:airline#extensions#tabline#enabled = 1
     let g:airline#extensions#tabline#show_tab_nr = 1
@@ -217,3 +208,8 @@ nnoremap <Leader>ve :Vexplore<Enter>
 " Easy insertion of special chars
 imap <C-L> λ
 imap <C-E> ◊
+
+" Easy access to fzf.vim commands
+nnoremap <Leader>f :Files<CR>
+nnoremap <Leader>b :Buffers<CR>
+nnoremap gw :grep <cword> . <CR>
