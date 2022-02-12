@@ -122,13 +122,6 @@ set hlsearch
 set incsearch
 nnoremap <Space> :noh<CR>
 
-" run a shell command
-" double space reruns previous shell command
-map <Leader>vp :VimuxPromptCommand<CR>
-map <Leader>vl :VimuxRunLastCommand<CR>
-map <Space><Space> :VimuxRunLastCommand<CR>
-map <eader>vi :VimuxInspectRunner<CR>
-
 " relative line numbering
 set number
 set relativenumber
@@ -210,6 +203,8 @@ imap <C-L> λ
 imap <C-E> ◊
 
 " Easy access to fzf.vim commands
-nnoremap <Leader>f :Files<CR>
 nnoremap <Leader>b :Buffers<CR>
+nnoremap <Leader>f :Files<CR>
+nnoremap <Leader>g :GitFiles?<CR>
+nnoremap <Leader>l :Lines<CR>
 nnoremap gw :grep <cword> . <CR>
