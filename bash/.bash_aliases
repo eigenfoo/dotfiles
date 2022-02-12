@@ -40,21 +40,28 @@ function current_branch() {
   echo ${ref#refs/heads/}
 }
 
-alias ga='git add'
 alias ga.='git add .'
 alias gb='git branch'
 alias gba='git branch -a'
-alias gbc='git branch --merged | grep -vE "(^\*|master|develop)" | xargs -r git branch -d'  # Deletes merged branches
 alias gbd='git branch -d'
 alias gbD='git branch -D'
-alias gco='git checkout'
+
+if command -v fzf &> /dev/null
+then
+    alias ga="git ls-files -m -o --exclude-standard | fzf -m --print0 | xargs -0 -o -t git add"
+    alias gco='git branch | fzf | xargs git checkout'
+else
+    alias ga='git add'
+    alias gco='git checkout'
+fi
+
 alias gcob='git checkout -b'
 alias gc='git commit -v'  # Overrides... something
 alias gca='git commit -va'
 alias gcam='git commit -vam'
 alias gcm='git commit -vm'
 alias gc!='git commit -v --amend'
-alias gd='git diff --color-words=. --ignore-all-space'
+alias gd='git diff'
 alias gdc='git diff --cached'
 alias gf='git fetch'
 alias gl="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
