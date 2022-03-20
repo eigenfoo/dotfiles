@@ -68,6 +68,7 @@ alias gl="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgree
 alias gll="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --stat"
 alias gpull='git pull origin $(current_branch)'
 alias gpush='git push origin $(current_branch)'
+alias gfpush='git push --force origin $(current_branch)'
 alias grh='git reset HEAD'
 alias grhh='git reset HEAD --hard'
 alias gst='git stash'
