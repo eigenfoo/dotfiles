@@ -204,7 +204,7 @@ imap <C-E> ◊
 
 " Easy access to fzf.vim commands
 nnoremap <Leader>b :Buffers<CR>
-nnoremap <Leader>f :Files<CR>
+nnoremap <Leader>f :Files <C-R>=expand('%:h')<CR><CR>
 nnoremap <Leader>g :GitFiles?<CR>
 nnoremap <Leader>l :Lines<CR>
 nnoremap gw :grep <cword> . <CR>
