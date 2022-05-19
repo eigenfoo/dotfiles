@@ -33,6 +33,8 @@ alias du='du -ch'
 # activate venvs
 alias svba='source venv/bin/activate'
 
+alias f='vim $(fzf)'
+
 # For git aliases below
 function current_branch() {
   ref=$(git symbolic-ref HEAD 2> /dev/null) || \
