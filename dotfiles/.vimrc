@@ -50,6 +50,8 @@ try
 catch
 endtry
 
+let mapleader=","
+
 " If ripgrep is installed, use it instead of the grep
 if executable('rg')
     set grepprg=rg\ --vimgrep
@@ -191,7 +193,6 @@ au FileType bash set makeprg=bash\ %
 nnoremap <leader><leader> :w\|:make<CR>
 
 " map leader and Airline tabs
-let mapleader=","
 nmap <leader>1 <Plug>AirlineSelectTab1
 nmap <leader>2 <Plug>AirlineSelectTab2
 nmap <leader>3 <Plug>AirlineSelectTab3
