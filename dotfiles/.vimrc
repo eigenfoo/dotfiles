@@ -24,10 +24,9 @@ try
         endif
     endif
 
-	if executable('rg')
-		set grepprg=rg\ --vimgrep
-		set grepformat=%f:%l:%c:%m
-	endif
+    let g:AutoPairsFlyMode = 1
+    let g:AutoPairsShortcutFastWrap = '<C-e>'
+    let g:AutoPairsShortcutBackInsert = '<C-b>'
 
     let g:airline#extensions#tabline#enabled = 1
     let g:airline#extensions#tabline#show_tab_nr = 1
@@ -38,22 +37,8 @@ try
     let g:airline#extensions#tabline#fnamecollapse = 1
     let g:airline#extensions#tabline#buffer_idx_mode = 1
 
-    let mapleader=","
-    nmap <leader>1 <Plug>AirlineSelectTab1
-    nmap <leader>2 <Plug>AirlineSelectTab2
-    nmap <leader>3 <Plug>AirlineSelectTab3
-    nmap <leader>4 <Plug>AirlineSelectTab4
-    nmap <leader>5 <Plug>AirlineSelectTab5
-    nmap <leader>6 <Plug>AirlineSelectTab6
-    nmap <leader>7 <Plug>AirlineSelectTab7
-    nmap <leader>8 <Plug>AirlineSelectTab8
-    nmap <leader>9 <Plug>AirlineSelectTab9
-    nmap <leader>h <Plug>AirlineSelectPrevTab
-    nmap <leader>l <Plug>AirlineSelectNextTab
-
     let g:ale_linters = {
     \   'python': ['flake8', 'pylint'],
-    \   'julia': ['languageserver'],
     \}
     let g:ale_fixers = {
     \   'python': ['black'],
@@ -64,6 +49,12 @@ try
     let g:jedi#popup_on_dot = 0
 catch
 endtry
+
+" If ripgrep is installed, use it instead of the grep
+if executable('rg')
+    set grepprg=rg\ --vimgrep
+    set grepformat=%f:%l:%c:%m
+endif
 
 set nocompatible        " use vim settings, not vi settings
 
@@ -140,8 +131,6 @@ nnoremap <right> <nop>
 set foldmethod=indent  " fold code using indents: this works well for Python
 set nofoldenable
 set foldlevel=2
-" visually select some lines, then space to fold. only works with foldmethod=manual 
-" vnoremap <Space> zf
 
 " scrolling offset, mouse scrolling
 set scrolloff=2
@@ -194,17 +183,30 @@ let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_winsize = 20
 let g:netrw_list_hide= '.*\.swp$'
-nnoremap <Leader>e :Vexplore<Enter>
-nnoremap <Leader>se :Sexplore<Enter>
-nnoremap <Leader>ve :Vexplore<Enter>
+nnoremap <leader>e :Vexplore<CR>
 
-" Easy insertion of special chars
-imap <C-L> λ
-imap <C-E> ◊
+" set <Leader><Leader> to run the current file depending on the filetype
+au FileType python set makeprg=python\ %
+au FileType bash set makeprg=bash\ %
+nnoremap <leader><leader> :w\|:make<CR>
 
-" Easy access to fzf.vim commands
-nnoremap <Leader>b :Buffers<CR>
-nnoremap <Leader>f :Files <C-R>=expand('%:h')<CR><CR>
-nnoremap <Leader>g :GitFiles?<CR>
-nnoremap <Leader>l :Lines<CR>
+" map leader and Airline tabs
+let mapleader=","
+nmap <leader>1 <Plug>AirlineSelectTab1
+nmap <leader>2 <Plug>AirlineSelectTab2
+nmap <leader>3 <Plug>AirlineSelectTab3
+nmap <leader>4 <Plug>AirlineSelectTab4
+nmap <leader>5 <Plug>AirlineSelectTab5
+nmap <leader>6 <Plug>AirlineSelectTab6
+nmap <leader>7 <Plug>AirlineSelectTab7
+nmap <leader>8 <Plug>AirlineSelectTab8
+nmap <leader>9 <Plug>AirlineSelectTab9
+nmap <leader>h <Plug>AirlineSelectPrevTab
+nmap <leader>l <Plug>AirlineSelectNextTab
+
+" easy access to fzf.vim commands
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>f :Files <C-R>=expand('%:h')<CR><CR>
+nnoremap <leader>g :GitFiles?<CR>
+nnoremap <leader>l :Lines<CR>
 nnoremap gw :grep <cword> . <CR>
