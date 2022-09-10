@@ -33,7 +33,9 @@ alias du='du -ch'
 # activate venvs
 alias svba='source venv/bin/activate'
 
-alias f='vim $(fzf)'
+# Add an "alert" alias for long running commands.  Use like so: 
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # For git aliases below
 function current_branch() {
@@ -45,16 +47,19 @@ function current_branch() {
 alias ga.='git add .'
 alias gb='git branch'
 alias gba='git branch -a'
-alias gbd='git branch -d'
-alias gbD='git branch -D'
 
 if command -v fzf &> /dev/null
 then
-    alias ga="git ls-files -m -o --exclude-standard | fzf -m --print0 | xargs -0 -o -t git add"
+    alias f='vim $(fzf)'
+    alias ga='git ls-files -m -o --exclude-standard | fzf -m --print0 | xargs -0 -o -t git add'
     alias gco='git branch | fzf | xargs git checkout'
+    alias gbd='git branch | fzf -m | xargs git branch -d'
+    alias gbD='git branch | fzf -m | xargs git branch -D'
 else
     alias ga='git add'
     alias gco='git checkout'
+    alias gbd='git branch -d'
+    alias gbD='git branch -D'
 fi
 
 alias gcob='git checkout -b'
