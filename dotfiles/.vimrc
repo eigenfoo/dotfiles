@@ -52,7 +52,7 @@ endtry
 
 let mapleader=","
 
-" If ripgrep is installed, use it instead of the grep
+" if ripgrep is installed, use it instead of the grep
 if executable('rg')
     set grepprg=rg\ --vimgrep
     set grepformat=%f:%l:%c:%m
@@ -95,6 +95,9 @@ set shiftwidth=4
 " indentation
 set autoindent
 set smartindent
+
+" switch between the last two files
+nnoremap <leader><leader> <C-^>
 
 " map jk and kj to Escape: hit j and k simultaneously to exit insert mode
 " also, shorten timeout length
@@ -178,6 +181,15 @@ set completeopt=menu,menuone,preview,noinsert
 vnoremap < <gv
 vnoremap > >gv
 
+" Make the current window big, but leave others context
+set winwidth=84
+" We have to have a winheight bigger than we want to set winminheight. But if
+" we set winheight to be huge before winminheight, the winminheight set will
+" fail.
+set winheight=5
+set winminheight=5
+set winheight=999
+
 " netrw
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
@@ -187,10 +199,10 @@ let g:netrw_winsize = 20
 let g:netrw_list_hide= '.*\.swp$'
 nnoremap <leader>e :Vexplore<CR>
 
-" set <Leader><Leader> to run the current file depending on the filetype
+" set <leader><space> to run the current file depending on the filetype
 au FileType python set makeprg=python\ %
 au FileType bash set makeprg=bash\ %
-nnoremap <leader><leader> :w\|:make<CR>
+nnoremap <leader><space> :w<bar>:!clear<CR><bar>:make<CR>
 
 " map leader and Airline tabs
 nmap <leader>1 <Plug>AirlineSelectTab1
@@ -205,9 +217,14 @@ nmap <leader>9 <Plug>AirlineSelectTab9
 nmap <leader>h <Plug>AirlineSelectPrevTab
 nmap <leader>l <Plug>AirlineSelectNextTab
 
+" replace %% with current directory; map edit and view in current directory
+cnoremap %% <C-R>=expand('%:h').'/'<CR>
+map <leader>e :edit %%
+map <leader>v :view %%
+
 " easy access to fzf.vim commands
-nnoremap <leader>b :Buffers<CR>
-nnoremap <leader>f :Files <C-R>=expand('%:h')<CR><CR>
-nnoremap <leader>g :GitFiles?<CR>
-nnoremap <leader>l :Lines<CR>
-nnoremap gw :grep <cword> . <CR>
+nmap <leader>b :Buffers<CR>
+nmap <leader>f :Files %%<CR>
+nmap <leader>g :GitFiles<CR>
+nmap <leader>l :Lines<CR>
+nmap gw :grep <cword> . <CR>
