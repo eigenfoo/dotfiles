@@ -6,8 +6,52 @@
     editor = vim
     whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
     excludesfile = ~/.gitignore
+    pager = diff-so-fancy | less --tabs=4 -RFX
 [merge]
     tool = vimdiff
     conflictstyle = diff3
 [mergetool]
     prompt = false
+[interactive]
+    diffFilter = diff-so-fancy --patch
+
+[alias]
+    s = status
+    b = branch
+    ba = branch --all
+    cob = checkout -b
+    aa = add --all
+    d = diff
+    dc = diff --cached
+    ds = diff --stat=160,120
+    c = commit --verbose
+    ca = commit --amend
+    fpush = push --force-with-lease
+    f = fetch
+    fa = fetch --all
+    rh = reset HEAD
+    rhh = reset HEAD --hard
+    st = stash
+    sts = stash show --text
+    stp = stash pop
+    std = stash drop
+    r = rebase
+    ra = rebase --abort
+    rc = rebase --continue
+    cp = cherry-pick
+    cpa = cherry-pick --abort
+    cpc = cherry-pick --continue
+
+    a = "!. ~/.githelpers && git_command_fzf_maybe add"
+    co = "!. ~/.githelpers && git_command_fzf_maybe checkout"
+    bd = "!. ~/.githelpers && git_command_fzf_maybe branch -d"
+    bd = "!. ~/.githelpers && git_command_fzf_maybe branch -D"
+
+    l = "!. ~/.githelpers && pretty_git_log"
+    la = !git l --all
+    r = !GIT_NO_PAGER=1 git l -30
+    ra = !git r --all
+    h = !git r -1
+    hp = "!. ~/.githelpers && show_git_head"
+    b = "!. ~/.githelpers && pretty_git_branch"
+    bs = "!. ~/.githelpers && pretty_git_branch_sorted"
