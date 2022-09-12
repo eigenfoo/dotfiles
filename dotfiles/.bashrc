@@ -86,3 +86,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# Set default editor to vi and set vi mode
+export EDITOR=vi
+set -o vi
