@@ -12,6 +12,7 @@ try
     Plugin 'joshdick/onedark.vim'
     Plugin 'junegunn/fzf'
     Plugin 'junegunn/fzf.vim'
+    Plugin 'tpope/vim-dispatch'
     Plugin 'tpope/vim-unimpaired'
     Plugin 'vim-airline/vim-airline'
     call vundle#end()
@@ -200,9 +201,9 @@ let g:netrw_list_hide= '.*\.swp$'
 nnoremap <leader>e :Vexplore<CR>
 
 " set <leader><space> to run the current file depending on the filetype
-au FileType python set makeprg=python\ %
-au FileType bash set makeprg=bash\ %
-nnoremap <leader><space> :w<bar>:!clear<CR><bar>:make<CR>
+autocmd FileType python let b:dispatch = 'python %'
+autocmd FileType bash let b:dispatch = 'bash %'
+nnoremap <leader><space> :w<bar>:Dispatch<CR>
 
 " map leader and Airline tabs
 nmap <leader>1 <Plug>AirlineSelectTab1
@@ -225,6 +226,6 @@ map <leader>v :view %%
 " easy access to fzf.vim commands
 nmap <leader>b :Buffers<CR>
 nmap <leader>f :Files %%<CR>
-nmap <leader>g :GitFiles<CR>
+nmap <leader>G :GitFiles<CR>
 nmap <leader>l :Lines<CR>
 nmap gw :grep <cword> . <CR>
