@@ -229,3 +229,22 @@ nmap <leader>f :Files %%<CR>
 nmap <leader>G :GitFiles<CR>
 nmap <leader>l :Lines<CR>
 nmap gw :grep <cword> . <CR>
+
+" jump to last cursor position unless it's invalid or in an event handler.
+" see `:help restore-cursor`
+autocmd BufReadPost *
+  \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+  \ |   exe "normal! g`\""
+  \ | endif
+
+" rename current file
+function! RenameFile()
+    let old_name = expand('%')
+    let new_name = input('New file name: ', expand('%'), 'file')
+    if new_name != '' && new_name != old_name
+        exec ':saveas ' . new_name
+        exec ':silent !rm ' . old_name
+        redraw!
+    endif
+endfunction
+map <leader>n :call RenameFile()<cr>
