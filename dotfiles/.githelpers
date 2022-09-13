@@ -87,7 +87,7 @@ git_command_fzf_maybe() {
             # ...and we're trying to add, fzf git ls-files...
             git ls-files --modified --others --exclude-standard | \
                 fzf --multi --print0 | \
-                xargs --null --open-tty --verbose git add
+                xargs -0 -o -t git add
         else
             # ...otherwise, fzf git branch.
             git branch | fzf --multi | xargs git $git_command
