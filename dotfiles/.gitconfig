@@ -14,6 +14,8 @@
     prompt = false
 [interactive]
     diffFilter = diff-so-fancy --patch
+[push]
+    default = current
 
 [alias]
     s = status
