@@ -12,9 +12,10 @@ try
     Plugin 'joshdick/onedark.vim'
     Plugin 'junegunn/fzf'
     Plugin 'junegunn/fzf.vim'
+    Plugin 'junegunn/goyo.vim'
     Plugin 'tpope/vim-dispatch'
     Plugin 'tpope/vim-unimpaired'
-    Plugin 'vim-airline/vim-airline'
+    Plugin 'itchyny/lightline.vim'
     call vundle#end()
 
     if !exists("g:os")
@@ -29,14 +30,12 @@ try
     let g:AutoPairsShortcutFastWrap = '<C-e>'
     let g:AutoPairsShortcutBackInsert = '<C-b>'
 
-    let g:airline#extensions#tabline#enabled = 1
-    let g:airline#extensions#tabline#show_tab_nr = 1
-    let g:airline#extensions#tabline#tab_nr_type = 1
-    let g:airline#extensions#tabline#formatter = 'default'
-    let g:airline#extensions#tabline#buffer_nr_show = 1
-    let g:airline#extensions#tabline#fnametruncate = 16
-    let g:airline#extensions#tabline#fnamecollapse = 1
-    let g:airline#extensions#tabline#buffer_idx_mode = 1
+    let g:lightline = {
+    \ 'active': {
+    \   'left': [['mode', 'paste'], ['filename', 'modified']],
+    \   'right': [['lineinfo'], ['percent'], ['readonly', 'linter_warnings', 'linter_errors', 'linter_ok']]
+    \ }
+    \ }
 
     let g:ale_linters = {
     \   'python': ['flake8', 'pylint'],
@@ -224,7 +223,7 @@ map <leader>e :edit %%
 map <leader>v :view %%
 
 " easy access to fzf.vim commands
-nmap <leader>b :Buffers<CR>
+nmap ; :Buffers<CR>
 nmap <leader>f :Files %%<CR>
 nmap <leader>G :GitFiles<CR>
 nmap <leader>l :Lines<CR>
