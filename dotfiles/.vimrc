@@ -31,6 +31,7 @@ try
     let g:AutoPairsShortcutBackInsert = '<C-b>'
 
     let g:lightline = {
+    \ 'colorscheme': 'one',
     \ 'active': {
     \   'left': [['mode', 'paste'], ['filename', 'modified']],
     \   'right': [['lineinfo'], ['percent'], ['readonly', 'linter_warnings', 'linter_errors', 'linter_ok']]
@@ -197,25 +198,12 @@ let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_winsize = 20
 let g:netrw_list_hide= '.*\.swp$'
-nnoremap <leader>e :Vexplore<CR>
+nnoremap <leader>x :Vexplore<CR>
 
 " set <leader><space> to run the current file depending on the filetype
 autocmd FileType python let b:dispatch = 'python %'
 autocmd FileType bash let b:dispatch = 'bash %'
 nnoremap <leader><space> :w<bar>:Dispatch<CR>
-
-" map leader and Airline tabs
-nmap <leader>1 <Plug>AirlineSelectTab1
-nmap <leader>2 <Plug>AirlineSelectTab2
-nmap <leader>3 <Plug>AirlineSelectTab3
-nmap <leader>4 <Plug>AirlineSelectTab4
-nmap <leader>5 <Plug>AirlineSelectTab5
-nmap <leader>6 <Plug>AirlineSelectTab6
-nmap <leader>7 <Plug>AirlineSelectTab7
-nmap <leader>8 <Plug>AirlineSelectTab8
-nmap <leader>9 <Plug>AirlineSelectTab9
-nmap <leader>h <Plug>AirlineSelectPrevTab
-nmap <leader>l <Plug>AirlineSelectNextTab
 
 " replace %% with current directory; map edit and view in current directory
 cnoremap %% <C-R>=expand('%:h').'/'<CR>
